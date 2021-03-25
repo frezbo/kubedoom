@@ -65,7 +65,7 @@ type podmode struct {
 }
 
 func (m podmode) getEntities() []string {
-	args := []string{"kubectl", "get", "pods", "-A", "-o", "go-template", "--template={{range .items}}{{.metadata.namespace}}/{{.metadata.name}} {{end}}"}
+	args := []string{"kubectl", "get", "pods", "--namespace", "kubedoom-chaos", "-o", "go-template", "--template={{range .items}}{{.metadata.namespace}}/{{.metadata.name}} {{end}}"}
 	output := outputCmd(args)
 	outputstr := strings.TrimSpace(output)
 	pods := strings.Split(outputstr, " ")

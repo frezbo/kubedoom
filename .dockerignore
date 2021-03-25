@@ -1,0 +1,10 @@
+assets
+.git
+CHANGELOG.md
+dockerdoom
+Dockerfile
+kind-config.yaml
+kubedoom.go
+LICENSE
+manifest
+README.md
